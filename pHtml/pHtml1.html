@@ -4,6 +4,30 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <script>document.createElement("myHero")</script>
+        <script>
+            window.onload = function(){
+               openCity(event, 'HTML'); 
+            }
+            function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}</script>
         <style>
             article {
                 margin: 5px;
@@ -37,21 +61,89 @@
                 text-align: center;
                 color: cadetblue;
             } 
+            div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the links inside the tab */
+div.tab a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+div.tab a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
         </style>
-        <myHero>ARTÍCULO TOMADO </br>DEL PERIÓDICO EL TIEMPO</myHero>
-        <title>Empleados de Google, tan bien pagados que dejan de trabajar</title>
+        <div class="tab">
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'HTML')">HTML</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'JAVASCRIPT')">JAVASCRIPT</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'CSS')">CSS</a>
+</div>
+        <div id="HTML" class="tabcontent">
+        <myHero>HTML</br> HYPER TEXT MARKUP LANGUAGE (LENGUAJE DE MARCAS DE HIPER TEXTO)</myHero>
+        <title>Proyecto 2 - HTML</title>
     </head>
     <body>
         <section>
             <article>
-                <h1>Empleados de Google, tan bien pagados que dejan de trabajar</h1>
-                <p>Los empleados de Google que se encontraban trabajando para el carro autónomo dejan Google 
-                para formar empresa o cambiar a otros empleos, dado que los sueldos base y las bonificaciones eran tan 
-                buenas que multiplicaron su salario hasta 16 veces el base.</p>
-                <p>Ahora Google está en la búsqueda de desarrolladores para aplicar en este campo, ya que el 80% de la 
-                fuerza laboral de este proyecto renunció.</p>
+                <h1>HTML es el elemento de construcción más básico para crear y representar visualmente una página web,
+                    más no su funcionalidad.</p>
+                <p>Es clave ya que las siglas M y L (Hyper Text) son las responsables de enlazar páginas o diferentes
+                sitios web.</p>
+                <p>M (Markup) son los tags que sirven para "anotar" los elementos de la página.</p>
             </article>
         </section>
+        </div>
+    <div id="JAVASCRIPT" class="tabcontent">
+        <myHero>JAVASCRIPT</br>EL LENGUAJE POR DEFECTO DE SCRIPT PARA LAS PÁGINAS WEB</myHero>
+        <title>Proyecto 2 - Javascript</title>
+    </head>
+    <body>
+        <section>
+            <article>
+                <h1>JAVASCRIPT, a menudo llamado js, es un lenguaje interpretado multi paradigma.</p>
+                <p>Esta desarrollado bajo el estándar ECMAScript.</br>Su última versión es la 5.1.</p>
+                <p>Javascript es el lenguaje que está encargado de la funcionalidad de los elementos que componen
+        la página web.</p>
+            </article>
+        </section>
+        </div>
+<div id="CSS" class="tabcontent">
+        <myHero>CSS</br> HOJAS DE ESTILO EN CASCADA</myHero>
+        <title>Proyecto 2 - CSS</title>
+    </head>
+    <body>
+        <section>
+            <article>
+                <h1>Las CSS describen la presentación de los documentos HTML.</p>
+                <p>Su última versión es la 3, siendo CSS3 un lenguaje base que está por convertirse en estándar en la Open Web.</p>
+                <p>Existen diferentes frameworks que usan CSS3 como base, entre muchos se encuentra SASS, que funcionan como un pseudolenguaje que añade funcionalidad a elementos o estilos de las páginas web, tales como animaciones.</p>
+            </article>
+        </section>
+        </div>
     </body>
     <footer>
         <p>Publicado por: Andrés Silva</p>
