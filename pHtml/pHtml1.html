@@ -6,26 +6,22 @@
         <script>document.createElement("myHero")</script>
         <script>
             window.onload = function(){
-               openCity(event, 'HTML'); 
+               renderContent(event, 'HTML'); 
             }
-            function openCity(evt, cityName) {
-    // Declare all variables
+            function renderContent(e, contentName) {
     var i, tabcontent, tablinks;
 
-    // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(contentName).style.display = "block";
     evt.currentTarget.className += " active";
 }</script>
         <style>
@@ -98,9 +94,9 @@ div.tab a:focus, .active {
 }
         </style>
         <div class="tab">
-  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'HTML')">HTML</a>
-  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'JAVASCRIPT')">JAVASCRIPT</a>
-  <a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'CSS')">CSS</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="renderContent(event, 'HTML')">HTML</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="renderContent(event, 'JAVASCRIPT')">JAVASCRIPT</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="renderContent(event, 'CSS')">CSS</a>
 </div>
         <div id="HTML" class="tabcontent">
         <myHero>HTML</br> HYPER TEXT MARKUP LANGUAGE (LENGUAJE DE MARCAS DE HIPER TEXTO)</myHero>

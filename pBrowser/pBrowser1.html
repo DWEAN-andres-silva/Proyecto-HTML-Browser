@@ -3,12 +3,137 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>BROWSER PÁGINA 1</title>
+        <script>document.createElement("pageHeader")</script>
+        <script>
+            window.onload = function(){
+               renderContent(event, 'DEFINICION'); 
+            }
+            function renderContent(e, contentName) {
+    var i, tabcontent, tablinks;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(contentName).style.display = "block";
+    evt.currentTarget.className += " active";
+}</script>
+        <style>
+            article {
+                margin: 5px;
+                padding: 10px;
+                background-color: white;
+            }
+            
+            section {
+                margin: 5px;
+                padding: 10px;
+                background-color: lightgrey;
+            }
+            
+            footer {
+                position: absolute;
+                padding: 10px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                padding: 1rem;
+                color: white;
+                background-color: black;
+                text-align: center;
+            }
+            
+            pageHeader {
+                display: block;
+                background-color: black;
+                padding: 50px;
+                font-size: 30px;
+                text-align: center;
+                color: cadetblue;
+            } 
+            div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the links inside the tab */
+div.tab a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+div.tab a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+        </style>
+        <div class="tab">
+  <a href="javascript:void(0)" class="tablinks" onclick="renderContent(event, 'DEFINICION')">DEFINICION</a>
+  <a href="javascript:void(0)" class="tablinks" onclick="renderContent(event, 'MARKET')">EN EL MERCADO</a>
+</div>
+        <div id="DEFINICION" class="tabcontent">
+        <pageHeader>BROWSER</pageHeader>
+        <title>BROWSER</title>
     </head>
     <body>
-
-        <h1>TODO : TEMA A ELEGIR</h1>
-        <h2>AUTOR: ANDRES SILVA</h2>
-        <p>DESARROLLO WEB</p>
+        <section>
+            <article>
+                <h1>Es un software.</p>
+                <p>Su función es la de permitir visualizar documentos HTML a través de la WWW.</p>
+                <p>Los navegadores actuales permiten mostrar o ejecutar: gráficos, secuencias de vídeo, sonido, animaciones y programas diversos además del texto y enlaces.</p>
+                <p>Su sandbox contiene elementos bastante importantes.</br>Uno de los más importantes es el motor de renderización, que obtiene el contenido del documento (HTML).</p>
+        <p>Otro elemento muy importante es el interpretador de documentos js que es capáz de convertirlo y ejecutarlo.</p>
+        <p>También cuenta con una capa de persistencia donde se almacenan las variables de sesión y las variables locales de la página que está en ejecución.</p>
+            </article>
+        </section>
+        </div>
+<div id="MARKET" class="tabcontent">
+        <pageHeader>BROWSERS EN EL MERCADO</pageHeader>
+        <title>Proyecto 2 - Browsers</title>
+    </head>
+    <body>
+        <section>
+            <article>
+                <ol>
+    <li>Google Chrome</li>
+    <li>Mozilla Firefox</li>
+    <li>Internet Explorer</li>
+                    <li>Microsoft Edge</li>
+                    <li>Opera</li>
+  </ol>
+                <p>...entre muchos otros.</p>
+            </article>
+        </section>
+        </div>
     </body>
+    <footer>
+        <p>Publicado por: Andrés Silva</p>
+        <p>Contacto: asilvama4609@universidadean.edu.co</p>
+    </footer>
 </html>
